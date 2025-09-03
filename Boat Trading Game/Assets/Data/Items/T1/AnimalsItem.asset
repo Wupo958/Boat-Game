@@ -10,11 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2a47e1c4f166e014a87eca99c37e986d, type: 3}
-  m_Name: BreadItem
+  m_Name: AnimalsItem
   m_EditorClassIdentifier: Assembly-CSharp::ItemDef
-  itemId: Bread
-  displayName: Bread
+  itemId: animals
+  displayName: Animals
   tier: 0
-  tags: 1
+  consumable: 0
   size: 1
-  icon: {fileID: 0}
+  worth: 1
+  icon: {fileID: 2800000, guid: 55fe4b88ee6950d44aeaac5e59f41eaa, type: 3}

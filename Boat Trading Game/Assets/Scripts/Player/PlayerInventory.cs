@@ -1,10 +1,13 @@
 using System.Collections.Generic;
+using System.Data.SqlTypes;
 using UnityEngine;
 
 public class PlayerInventory : MonoBehaviour
 {
-    [SerializeField] private int capacitySize = 100; // Gesamtkapazität in Size-Einheiten
+    [SerializeField] private int capacitySize = 100; // Gesamtkapazitï¿½t in Size-Einheiten
     [SerializeField] private List<ItemStack> stacks = new();
+
+    [SerializeField] public int money;
 
     public int CapacitySize => capacitySize;
     public int UsedSize
@@ -35,12 +38,14 @@ public class PlayerInventory : MonoBehaviour
             if (s.def == def)
             {
                 s.amount += amount;
+                money -= def.worth * amount;
                 return true;
             }
         }
 
         // neuen Stack anlegen
         stacks.Add(new ItemStack { def = def, amount = amount });
+        money -= def.worth * amount;
         return true;
     }
     public bool Remove(ItemDef def, int amount)
@@ -82,12 +87,4 @@ public class ItemInstance
     }
 
     public int Size => def != null ? def.size : 0;
-}
-
-[System.Serializable]
-public class ItemStack
-{
-    public ItemDef def;
-    public int amount;
-    public int TotalSize => def.size * amount;
 }

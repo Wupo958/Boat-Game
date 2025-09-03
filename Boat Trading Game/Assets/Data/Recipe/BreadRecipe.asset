@@ -13,8 +13,11 @@ MonoBehaviour:
   m_Name: BreadRecipe
   m_EditorClassIdentifier: Assembly-CSharp::RecipeDef
   recipeId: 
-  inputs: []
-  outputs: []
+  inputs:
+  - item: {fileID: 11400000, guid: 8890f2306a4039a4aa625f5b52bc9051, type: 2}
+    amount: 2
+  outputs:
+  - item: {fileID: 11400000, guid: cc459472cff3db34d91f45c0f3350fef, type: 2}
+    amount: 1
   craftTimeSeconds: 5
-  requiredStationTag: 0
-  cost: 0
+  cost: 1

@@ -14,6 +14,5 @@ public class RecipeDef : ScriptableObject
 
     [Header("Processing")]
     public float craftTimeSeconds = 5f;
-    public ItemTag requiredStationTag;  
     public int cost = 0; 
 }
